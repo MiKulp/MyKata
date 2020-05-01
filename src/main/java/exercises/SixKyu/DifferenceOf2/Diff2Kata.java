@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Diff2Kata {
     public static void main(String[] args) {
-        int[][] array = twosDifference(new int[]{4, 3, 1, 5, 6});
+        int[][] array = twoDifference(new int[]{4, 3, 1, 5, 6});
         System.out.println(Arrays.deepToString(array));
     }
 
-    public static int[][] twosDifference(int[] array) {
+    public static int[][] twoDifference(int[] array) {
 
         int [] arrayTemp = Arrays.stream(array).sorted().toArray();
         List<Integer> tempList = new LinkedList<>();

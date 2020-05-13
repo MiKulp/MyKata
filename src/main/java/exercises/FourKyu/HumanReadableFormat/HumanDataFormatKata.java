@@ -1,82 +1,87 @@
 package exercises.FourKyu.HumanReadableFormat;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class HumanDataFormatKata {
     public static void main(String[] args) {
 
-        System.out.println(formatDuration(3662));
+//        System.out.println(formatDuration(3662));
+        System.out.println(printArray(createArray(120)));
+
+        int[] list = createArray(3662);
+
+
     }
 
     public static String formatDuration(int seconds) {
+      return seconds > 0 ? printArray(createArray(seconds)): "now";
+    }
 
-        if (seconds == 0) return "now";
-
+    public static int[] createArray(int seconds) {
         int auxInt = 0;
-        StringBuilder returnString = new StringBuilder("");
+        int[] returnArray = new int[5];
 
         if (seconds >= 31536000) {
             auxInt = seconds / 31536000;
-            if (auxInt == 1) returnString.append("1 year");
-            else returnString.append(String.format("%d years", auxInt));
+            returnArray[0] = auxInt;
             seconds -= auxInt * 31536000;
-
-            if (seconds > 0 && seconds % 86400 == 0) {
-                returnString.append(" and ");
-            } else if (seconds > 0) {
-                returnString.append(", ");
-            }
-
         }
-
         if (seconds < 31536000 && seconds >= 86400) {
             auxInt = seconds / 86400;
-
-            if (auxInt == 1) returnString.append("1 day");
-            else returnString.append(String.format("%d days", auxInt));
+            returnArray[1] = auxInt;
             seconds -= auxInt * 86400;
 
-            if (seconds > 0 && seconds % 3600 == 0) {
-                returnString.append(" and ");
-            } else if (seconds > 0) {
-                returnString.append(", ");
-            }
-
         }
-
         if (seconds < 86400 && seconds >= 3600) {
             auxInt = seconds / 3600;
-
-            if (auxInt == 1) returnString.append("1 hour");
-            else returnString.append(String.format("%d hours", auxInt));
+            returnArray[2] = auxInt;
             seconds -= auxInt * 3600;
-
-            if (seconds > 0 && seconds % 60 == 0) {
-                returnString.append(" and ");
-            } else if (seconds > 0 ) {
-                returnString.append(", ");
-            }
         }
 
         if (seconds < 3600 && seconds >= 60) {
             auxInt = seconds / 60;
-
-            if (auxInt == 1) returnString.append("1 minute");
-            else returnString.append(String.format("%d minutes", auxInt));
+            returnArray[3] = auxInt;
             seconds -= auxInt * 60;
 
-            if (seconds > 0 ) {
-                returnString.append(" and ");
-            }
         }
 
         if (seconds < 60 && seconds >= 1) {
             auxInt = seconds / 1;
-
-            if (auxInt == 1) returnString.append("1 second");
-            else returnString.append(String.format("%d seconds", auxInt));
-            seconds -= auxInt * 1;
+            returnArray[4] = auxInt;
         }
 
-        return returnString.toString();
+        return returnArray;
+    }
+
+    public static String printArray(int[] array) {
+
+        String[] arrString = new String[]{"year", "day", "hour", "minute", "second"};
+        StringBuilder builder = new StringBuilder("");
+
+        for (int i = 0 ; i < array.length ; i++) {
+
+            if (array[i] == 1) builder.append(String.format("%d %s", array[i], arrString[i]));
+            else if (array[i] > 1) builder.append(String.format("%d %ss", array[i], arrString[i]));
+
+            int next = haveNext(array, i+1);
+
+            if (array[i] > 0 && next == 1) builder.append(" and ");
+            else if (array[i] > 0 && next > 1) builder.append(", ");
+
+        }
+
+        return builder.toString();
+    }
+
+    public static int haveNext(int[] arr, int indexToStart) {
+        int x = 0;
+
+        for (int i = indexToStart ; i < arr.length ; i++) {
+            if (arr[i] > 0) x++;
+        }
+
+        return x;
     }
 
 }

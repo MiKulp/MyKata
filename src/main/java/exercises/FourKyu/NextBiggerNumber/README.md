@@ -1,0 +1,1 @@
+Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits.

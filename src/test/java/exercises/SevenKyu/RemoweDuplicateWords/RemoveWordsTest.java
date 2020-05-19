@@ -26,19 +26,19 @@ class RemoveWordsTest {
     @DisplayName("test with cat")
     @Test
     void removeDuplicateWordsCat() {
-        assertThat(removeWords.removeDuplicateWords("my cat is my cat fat")).isEqualTo("my cat is fat");
+        assertThat(RemoveWords.removeDuplicateWords("my cat is my cat fat")).isEqualTo("my cat is fat");
     }
 
     @DisplayName("test with null")
     @Test
     void removeDuplicateWordsNull() {
-        assertThat(removeWords.removeDuplicateWords(null)).isEqualTo("");
+        assertThat(RemoveWords.removeDuplicateWords(null)).isEqualTo("");
     }
 
     @DisplayName("test with empty String")
     @Test
     void removeDuplicateWordsEmptyString() {
-        assertThat(removeWords.removeDuplicateWords("")).isEqualTo("");
+        assertThat(RemoveWords.removeDuplicateWords("")).isEqualTo("");
     }
 
 }

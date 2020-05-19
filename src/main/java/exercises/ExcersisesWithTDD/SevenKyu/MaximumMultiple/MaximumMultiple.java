@@ -1,4 +1,4 @@
-package exercises.ExcersisesWithTDD.SevenKyu;
+package exercises.ExcersisesWithTDD.SevenKyu.MaximumMultiple;
 
 public class MaximumMultiple {
 

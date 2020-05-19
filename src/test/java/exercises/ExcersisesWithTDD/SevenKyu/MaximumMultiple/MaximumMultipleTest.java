@@ -1,5 +1,6 @@
-package exercises.ExcersisesWithTDD.SevenKyu;
+package exercises.ExcersisesWithTDD.SevenKyu.MaximumMultiple;
 
+import exercises.ExcersisesWithTDD.SevenKyu.MaximumMultiple.MaximumMultiple;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

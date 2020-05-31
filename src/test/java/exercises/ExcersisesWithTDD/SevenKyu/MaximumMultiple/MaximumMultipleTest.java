@@ -12,7 +12,7 @@ class MaximumMultipleTest {
 
     @DisplayName("positive test")
     @Test
-    void maxMultiple() {
+    public void maxMultiple() {
         assertThat(MaximumMultiple.maxMultiple(10, 50)).isEqualTo(50);
         assertThat(MaximumMultiple.maxMultiple(37, 200)).isEqualTo(185);
         assertThat(MaximumMultiple.maxMultiple(7, 100)).isEqualTo(98);

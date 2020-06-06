@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class AreTheSameKata {
 
     public static void main(String[] args) {
+        String s = "some text";
 
     }
 
@@ -19,4 +20,5 @@ public class AreTheSameKata {
 
         return listA.toString().equals(listB.toString());
     }
+
 }

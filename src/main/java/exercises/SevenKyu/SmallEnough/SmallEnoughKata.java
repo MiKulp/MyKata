@@ -6,7 +6,8 @@ public class SmallEnoughKata {
 
     public static boolean smallEnough(int[] a, int limit) {
 
-    return IntStream.of(a).max().getAsInt() <= limit;
+        return IntStream.of(a).max().orElse(limit) <= limit;
 
     }
+
 }

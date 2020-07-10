@@ -1,0 +1,1 @@
+A stream of data is received and needs to be reversed.

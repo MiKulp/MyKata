@@ -1,0 +1,1 @@
+A Tidy number is a number whose digits are in non-decreasing order.

@@ -1,0 +1,1 @@
+In this Kata your task will be to return the count of pairs that have consecutive numbers.

@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class RepetitionKata {
 
-    public static void main(String[] args) {
-        Arrays.stream(longestRepetition("abbbccccd")).forEach(System.out::println);
-    }
 
     public static Object[] longestRepetition(String s) {
 
